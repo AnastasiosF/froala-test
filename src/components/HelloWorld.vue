@@ -9,8 +9,13 @@ import FroalaEditor from 'froala-editor'
 // Load a plugin.
 import 'froala-editor/js/plugins/align.min.js'
 import 'froala-editor/js/plugins/colors.min.js'
+import 'froala-editor/js/plugins/draggable.min.js'
+import 'froala-editor/js/plugins/image.min.js'
 // Import Froala Editor css files.
 import 'froala-editor/css/froala_editor.pkgd.min.css';
+import 'froala-editor/css/plugins/draggable.min.css';
+import 'froala-editor/css/plugins/image.min.css';
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -23,7 +28,8 @@ export default {
   },
   mounted() {
     const config = {
-
+      dragInline: false,
+      pluginsEnabled: ['image', 'draggable']
     }
     this.editor = new FroalaEditor("#editor",config)
   },
